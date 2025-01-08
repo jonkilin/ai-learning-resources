@@ -14,37 +14,6 @@ AI Learning Resources Navigation 是一个人工智能学习资源导航平台�
 - 用户评分和评论系统
 - 资源提交建议功能
 
-## 项目启动指南
-
-## GitHub 仓库管理
-
-### 1. 初始化Git仓库
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### 2. 创建GitHub仓库
-1. 登录GitHub
-2. 创建新仓库
-3. 添加远程仓库地址：
-```bash
-git remote add origin https://github.com/your-username/your-repo-name.git
-```
-
-### 3. 配置GitHub Secrets
-1. 进入仓库Settings -> Secrets -> Actions
-2. 添加以下Secrets：
-   - SSH_PRIVATE_KEY: 服务器SSH私钥
-   - REMOTE_HOST: 服务器IP或域名
-   - REMOTE_USER: 服务器用户名
-
-### 4. 推送代码
-```bash
-git push -u origin main
-```
-
 ## 安装与使用
 
 ### 本地开发环境
@@ -91,43 +60,13 @@ npm run dev
 - 研究人员分享优质资源
 - 企业培训AI人才
 
-## 云服务器部署指南
->>>>>>> REPLACE>
+## 技术栈
+- 前端：React + TypeScript
+- 后端：Node.js + Express
+- 数据库：MongoDB
+- 部署：Docker + Nginx
 
-# AI Learning Resources Navigation
-
-## 项目启动指南
-
-## GitHub 仓库管理
-
-### 1. 初始化Git仓库
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### 2. 创建GitHub仓库
-1. 登录GitHub
-2. 创建新仓库
-3. 添加远程仓库地址：
-```bash
-git remote add origin https://github.com/your-username/your-repo-name.git
-```
-
-### 3. 配置GitHub Secrets
-1. 进入仓库Settings -> Secrets -> Actions
-2. 添加以下Secrets：
-   - SSH_PRIVATE_KEY: 服务器SSH私钥
-   - REMOTE_HOST: 服务器IP或域名
-   - REMOTE_USER: 服务器用户名
-
-### 4. 推送代码
-```bash
-git push -u origin main
-```
-
-## 云服务器部署指南
+## 云端部署指南
 
 ### 1. 服务器环境准备
 - 选择云服务商（推荐：AWS EC2, DigitalOcean, Linode）
@@ -233,41 +172,86 @@ sudo certbot --nginx -d your-domain.com
 ## 许可证
 本项目采用 GPL v2 or later 许可证，详情请参阅 [LICENSE](LICENSE) 文件。
 
-### 环境要求
+## 贡献指南
+欢迎提交Issue和PR，贡献流程如下：
+1. Fork项目
+2. 创建特性分支
+3. 提交代码变更
+4. 创建Pull Request
+5. 等待代码审查
+
+## 联系我们
+- 官网：https://jiaozi.ai
+- 邮箱：support@jiaozi.ai
 # AI Learning Resources Navigation
 
-## 项目启动指南
+[![License: GPL v2 or later](https://img.shields.io/badge/License-GPL%20v2%2B-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-## GitHub 仓库管理
+## 项目介绍
+AI Learning Resources Navigation 是一个人工智能学习资源导航平台，由 jiaoziAI 开发，官网地址：https://jiaozi.ai
 
-### 1. 初始化Git仓库
+主要功能：
+- 提供AI学习路线图和知识体系
+- 收录优质AI学习资源（课程、教程、书籍、论文、工具等）
+- 资源分类整理（机器学习、深度学习、NLP等）
+- 资源详细信息展示（简介、难度评级、使用建议）
+- 资源搜索和筛选功能
+- 用户评分和评论系统
+- 资源提交建议功能
+
+## 安装与使用
+
+### 本地开发环境
+1. 克隆项目
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
+git clone https://github.com/jonkilin/ai-learning-resources.git
+cd ai-learning-resources
 ```
 
-### 2. 创建GitHub仓库
-1. 登录GitHub
-2. 创建新仓库
-3. 添加远程仓库地址：
+2. 安装依赖
 ```bash
-git remote add origin https://github.com/your-username/your-repo-name.git
+# 后端
+cd backend
+npm install
+
+# 前端
+cd ../frontend
+npm install
 ```
 
-### 3. 配置GitHub Secrets
-1. 进入仓库Settings -> Secrets -> Actions
-2. 添加以下Secrets：
-   - SSH_PRIVATE_KEY: 服务器SSH私钥
-   - REMOTE_HOST: 服务器IP或域名
-   - REMOTE_USER: 服务器用户名
+3. 配置环境变量
+- 后端：创建 `.env` 文件
+- 前端：创建 `.env` 文件
 
-### 4. 推送代码
+4. 启动服务
 ```bash
-git push -u origin main
+# 启动后端
+cd backend
+npm run dev
+
+# 启动前端
+cd ../frontend
+npm run dev
 ```
 
-## 云服务器部署指南
+5. 访问应用
+- 前端：http://localhost:3000
+- 后端API：http://localhost:5000
+
+## 使用场景
+- AI初学者寻找学习路径
+- 开发者查找特定领域资源
+- 教育机构构建课程体系
+- 研究人员分享优质资源
+- 企业培训AI人才
+
+## 技术栈
+- 前端：React + TypeScript
+- 后端：Node.js + Express
+- 数据库：MongoDB
+- 部署：Docker + Nginx
+
+## 云端部署指南
 
 ### 1. 服务器环境准备
 - 选择云服务商（推荐：AWS EC2, DigitalOcean, Linode）
@@ -369,60 +353,85 @@ sudo certbot --nginx -d your-domain.com
 - 定期更新系统
 - 配置日志轮转
 - 设置自动备份
+# AI Learning Resources Navigation
 
-### 环境要求
-- Node.js 16+
-- MongoDB
-- Redis (可选)
+[![License: GPL v2 or later](https://img.shields.io/badge/License-GPL%20v2%2B-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-### 安装依赖
+## 项目介绍
+AI Learning Resources Navigation 是一个人工智能学习资源导航平台，由 jiaoziAI 开发，官网地址：https://jiaozi.ai
+
+主要功能：
+- 提供AI学习路线图和知识体系
+- 收录优质AI学习资源（课程、教程、书籍、论文、工具等）
+- 资源分类整理（机器学习、深度学习、NLP等）
+- 资源详细信息展示（简介、难度评级、使用建议）
+- 资源搜索和筛选功能
+- 用户评分和评论系统
+- 资源提交建议功能
+
+## 安装与使用
+
+### 本地开发环境
+1. 克隆项目
 ```bash
-# 安装后端依赖
+git clone https://github.com/jonkilin/ai-learning-resources.git
+cd ai-learning-resources
+```
+
+2. 安装依赖
+```bash
+# 后端
 cd backend
 npm install
 
-# 安装前端依赖
+# 前端
 cd ../frontend
 npm install
 ```
 
-### 环境变量配置
-在backend/.env文件中添加：
-```env
-NODE_ENV=development
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/ai-learning
-JWT_SECRET=your_jwt_secret
-```
+3. 配置环境变量
+- 后端：创建 `.env` 文件
+- 前端：创建 `.env` 文件
 
-在frontend/.env文件中添加：
-```env
-VITE_API_BASE_URL=http://localhost:5000/api
-```
-
-### 启动项目
+4. 启动服务
 ```bash
-# 启动后端服务
+# 启动后端
 cd backend
 npm run dev
 
-# 启动前端服务
+# 启动前端
 cd ../frontend
 npm run dev
 ```
 
-### 访问地址
+5. 访问应用
 - 前端：http://localhost:3000
 - 后端API：http://localhost:5000
 
-### 数据库初始化
-```bash
-# 创建管理员用户
-curl -X POST http://localhost:5000/api/users/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Admin",
-    "email": "admin@example.com",
-    "password": "admin123",
-    "isAdmin": true
-  }'
+## 使用场景
+- AI初学者寻找学习路径
+- 开发者查找特定领域资源
+- 教育机构构建课程体系
+- 研究人员分享优质资源
+- 企业培训AI人才
+
+## 技术栈
+- 前端：React + TypeScript
+- 后端：Node.js + Express
+- 数据库：MongoDB
+- 部署：Docker + Nginx
+
+## 许可证
+本项目采用 GPL v2 or later 许可证，详情请参阅 [LICENSE](LICENSE) 文件。
+
+## 贡献指南
+欢迎提交Issue和PR，贡献流程如下：
+1. Fork项目
+2. 创建特性分支
+3. 提交代码变更
+4. 创建Pull Request
+5. 等待代码审查
+
+## 联系我们
+- 官网：https://jiaozi.ai
+- 邮箱：admin@jiaozi.ai
