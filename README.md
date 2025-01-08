@@ -84,7 +84,7 @@ npm run dev
 ### 2. 项目部署
 ```bash
 # 克隆项目
-git clone https://github.com/your-repo/ai-learning-resources.git
+git clone https://github.com/jonkilin/ai-learning-resources.git
 cd ai-learning-resources
 
 # 安装Node.js
