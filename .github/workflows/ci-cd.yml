@@ -1,0 +1,83 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: |
+        cd backend
+        npm install
+        cd ../frontend
+        npm install
+        
+    - name: Run backend tests
+      run: |
+        cd backend
+        npm test
+        
+    - name: Run frontend tests
+      run: |
+        cd frontend
+        npm test
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: |
+        cd backend
+        npm install
+        cd ../frontend
+        npm install
+        
+    - name: Build frontend
+      run: |
+        cd frontend
+        npm run build
+        
+    - name: Deploy to production
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
+        
+        rsync -avz --delete backend/ $REMOTE_USER@$REMOTE_HOST:/var/www/ai-learning/backend
+        rsync -avz --delete frontend/build/ $REMOTE_USER@$REMOTE_HOST:/var/www/ai-learning/frontend
+        
+        ssh $REMOTE_USER@$REMOTE_HOST "cd /var/www/ai-learning/backend && npm install --production && pm2 restart backend"
+        ssh $REMOTE_USER@$REMOTE_HOST "pm2 restart frontend"

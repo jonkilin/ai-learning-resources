@@ -1,0 +1,22 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:node/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "node"],
+  "rules": {
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-missing-import": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-process-exit": "off",
+    "node/no-unpublished-import": "off"
+  },
+  "settings": {
+    "node": {
+      "tryExtensions": [".js", ".json", ".node", ".ts"]
+    }
+  }
+}
