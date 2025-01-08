@@ -15,11 +15,6 @@ AI Learning Resources Navigation 是一个人工智能学习资源导航平台�
 - 资源提交建议功能
 
 ## 项目启动指南
->>>>>>> REPLACE>
-
-# AI Learning Resources Navigation
-
-## 项目启动指南
 
 ## GitHub 仓库管理
 
